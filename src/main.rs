@@ -22,9 +22,9 @@ fn main() {
         println!("6-string\n");
     }
 
-    let mut prev_question_string_index: usize = 5;
+    let mut prev_question_string_index: usize = high_range;
     let mut prev_question_note_index: usize = 7;
-    let mut question_string_index: usize = 5;
+    let mut question_string_index: usize = high_range;
     let mut question_note_index: usize = 7;
 
     loop {
@@ -78,7 +78,7 @@ fn ask_for_fret_number(question_string_index: usize, question_note_index: usize,
         .read_line(&mut answer)
         .expect("failed to read line");
 
-    if &answer[..1] == "q" {
+    if answer.trim() == "q" {
         println!("goodbye!\n\n");
         return false;
     }
